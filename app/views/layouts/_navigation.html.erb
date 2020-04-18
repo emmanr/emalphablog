@@ -1,0 +1,17 @@
+<header class="header group">
+  <nav class="container">
+    <%= link_to "LOGO", root_path, class: "header-logo pull-left" %>
+
+    <ul class="main-navigation pull-right">
+      <li><%= active_links("Home", root_path) %></li>
+      <li><%= active_links("About", about_path) %></li>
+      <li><%= active_links("Articles", articles_path) %></li>
+    </ul>
+
+    <%= button_tag type: "button", class: "nav-toggle pull-right" do %>
+      <% (1..3).each do %>
+        <span></span>
+      <% end %>
+    <% end %>
+  </nav>
+</header>
