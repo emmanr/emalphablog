@@ -13,7 +13,7 @@
 
     <div class="row articles-showpg-descsmall">
       <div class="col-6">
-        Edited by Admin
+        Edited by <%= @article.user.username %>
       </div>
       <div class="col-6 text-right">
         Created <%= time_ago_in_words(@article.created_at) %> ago

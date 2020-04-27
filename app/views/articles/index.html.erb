@@ -17,7 +17,7 @@
               , Updated <%= time_ago_in_words(art.updated_at) %> ago
               <% end %>
               <br>
-              Posted by: Admin
+              Posted by: <%= art.user.username %>
             </p>
             <p class="articles-article-desc"><%= truncate(art.description, length: 150, omission: '...') %></p>
             <p class="text-center">
