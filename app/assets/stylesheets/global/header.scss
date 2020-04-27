@@ -1,7 +1,7 @@
 @import "mixins";
 
 .header {
-  background-color: #5e4fca;
+  background-color: #f5f5f5;
 
   &-dropdown {
     left: auto;
@@ -9,18 +9,22 @@
   }
 
   &-navbar-brand {
-    color: #fff;
+    color: #26263e;
     font-weight: bold;
+
+    &:hover {
+      color: #525286;
+    }
   }
 
   &-nav-link {
-    color: #fff;
+    color: #26263e;
     font-size: 14px;
     font-weight: 600;
     padding: 18px 14px;
 
     &:hover {
-      color: #8d8dff;
+      color: #525286;
     }
   }
 }
