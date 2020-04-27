@@ -6,34 +6,16 @@
   max-width: 1390px;
 }
 
-.group:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
+.main-container {
+  min-height: calc(100vh - 110px);
 }
 
 a {
   @include transition(all 0.3s ease);
+}
+
+h1 {
+  font-weight: bold;
 }
 
 $colors: (red: #E74C3C, blue: #0099FF, green: #2ECC71);
@@ -48,6 +30,7 @@ $colors: (red: #E74C3C, blue: #0099FF, green: #2ECC71);
     @include transition(opacity 0.3s ease);
 
     &:hover {
+      color: #fff;
       opacity: 0.9;
     }
   }

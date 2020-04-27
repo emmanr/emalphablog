@@ -1,0 +1,22 @@
+@import "mixins";
+
+.notification {
+  &-heading {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &-lists {
+    font-size: 15px;
+    list-style: disc;
+    padding-left: 20px;
+  }
+
+  &-articles {
+    margin-bottom: 30px;
+  }
+
+  &-flash {
+    @include border-radius(0);
+  }
+}
