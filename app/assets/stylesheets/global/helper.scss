@@ -23,7 +23,7 @@ h1 {
 }
 
 .main-heading {
-  background: image-url("gray-laptop.jpg") no-repeat right top / 100%;
+  background: image-url("gray-laptop.jpg") no-repeat right top / cover;
   color: #fff;
   line-height: 150px;
   margin-bottom: 50px;
@@ -54,5 +54,14 @@ $colors: (red: #E74C3C, blue: #0099FF, green: #2ECC71);
       color: #fff;
       opacity: 0.9;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 33px;
+    line-height: 45px;
+    padding-bottom: 30px;
+    padding-top: 30px;
   }
 }

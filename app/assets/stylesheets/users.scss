@@ -31,4 +31,13 @@
       }
     }
   }
+
+  &-table-link,
+  &-table {
+    color: #404040;
+  }
+
+  &-table-link {
+    text-decoration: underline;
+  }
 }
