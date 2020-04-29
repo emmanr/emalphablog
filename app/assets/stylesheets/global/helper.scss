@@ -1,5 +1,9 @@
 @import "mixins";
 
+body {
+  color: #404040;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -16,6 +20,23 @@ a {
 
 h1 {
   font-weight: bold;
+}
+
+.main-heading {
+  background: image-url("gray-laptop.jpg") no-repeat right top / 100%;
+  color: #fff;
+  line-height: 150px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.user-thumbnail {
+  border: 1px solid #fff;
+  @include border-radius(50%);
+  @include box-shadow(0 1px 5px 0 rgba(0,0,0,0.5));
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 $colors: (red: #E74C3C, blue: #0099FF, green: #2ECC71);

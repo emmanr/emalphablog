@@ -1,11 +1,34 @@
 @import "mixins";
 
 .users {
-  &-heading {
-    background: image-url("gray-laptop.jpg") no-repeat right top / 100%;
-    color: #fff;
-    line-height: 150px;
-    margin-bottom: 50px;
-    text-align: center;
+  &-show {
+    &-uname {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    &-articles-heading {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    &-article {
+      background: #f2f2f2;
+      @include border-radius(5px);
+      @include box-sizing(border-box);
+      padding: 20px;
+
+      &-title {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      &-createdat {
+        color: #777;
+        font-size: 11px;
+        line-height: 23px;
+      }
+    }
   }
 }
