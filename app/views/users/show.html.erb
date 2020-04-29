@@ -7,6 +7,10 @@
         <%= user_thumbnail @user, size: 150 %>
         <h2 class="users-show-uname mt-4 mb-1">Welcome <%= @user.username %></h2>
         <p class="users-show-email text-center"><%= @user.email %></p>
+        <p class="text-center mt-3">
+          <%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-primary" %>
+          <%= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure you want to remove this user?" }, class: "btn btn-outline-danger" %>
+        </p>
       </div>
       <div class="col-md-9 col-sm-1">
         <h3 class="text-center users-show-articles-heading mb-4">Articles</h3>
@@ -27,8 +31,8 @@
             <p class="users-show-article-description"><%= article.description %></p>
             <hr>
             <p class="text-center">
-              <%= link_to "Edit", edit_article_path(article.id), class: "btn btn-success" %>
-              <%= link_to "Delete", article_path(article.id), method: :delete, data: { confirm: "Are you sure you want to delete this article?" }, class: "btn btn-danger" %>
+              <%= link_to "Edit", edit_article_path(article), class: "btn btn-success" %>
+              <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete this article?" }, class: "btn btn-danger" %>
             </p>
           </section>
         <% end %>

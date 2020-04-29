@@ -1,0 +1,47 @@
+@import "mixins";
+
+.pagination {
+  display: block;
+  text-align: center;
+
+  * {
+    display: inline-block;
+    font-size: 15px;
+    vertical-align: middle;
+  }
+
+  em, a {
+    border: 1px solid #fff;
+    @include border-radius(3px);
+    color: #446abb;
+    padding: 3px 13px;
+  }
+
+  a:hover {
+    border-color: #446abb;
+  }
+
+  .current {
+    background-color: #446abb;
+    border-color: #446abb;
+    color: #fff;
+  }
+
+  .disabled {
+    color: #ababab;
+  }
+
+  .previous_page {
+    margin-right: 5px;
+  }
+
+  .next_page {
+    margin-left: 5px;
+  }
+
+  .previous_page,
+  .next_page {
+    border: 0;
+    padding: 0;
+  }
+}
