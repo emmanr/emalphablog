@@ -24,9 +24,9 @@
           <td class="align-middle"><%= pluralize(user.articles.count, "article") %></td>
           <td class="align-middle">Created <%= time_ago_in_words(user.created_at) %> ago</td>
           <td class="align-middle">
-            <% if logged_in? && (current_user == user || current_user.id == 1)  %>
+            <% if logged_in? && (current_user == user || current_user.admin?)  %>
               <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-primary" %>
-              <%= link_to "Delete", users_path(user), method: :delete, data: { confirm: "Are you sure you want to remove this user?" }, class: "btn btn-outline-danger" %>
+              <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure you want to remove this user?" }, class: "btn btn-outline-danger" %>
             <% end %>
           </td>
         </tr>

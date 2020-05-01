@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:index]
+  before_action :require_user, except: [:new, :create]
   before_action :require_same_user, only: [:edit, :update]
 
   def index
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:warning] = "Successfully removed user"
+    flash[:danger] = "Successfully removed user and it's articles"
     redirect_to users_path
   end
 
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
+    if current_user != @user and !current_user.admin?
       flash[:danger] = "You can only edit your own account"
       redirect_to @user
     end
