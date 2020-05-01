@@ -1,4 +1,5 @@
-@import "mixins";
+@import "shared/variables";
+@import "shared/mixins";
 
 .pagination {
   display: block;
@@ -13,17 +14,18 @@
   em, a {
     border: 1px solid #fff;
     @include border-radius(3px);
-    color: #446abb;
+    color: $p_color;
     padding: 3px 13px;
   }
 
   a:hover {
-    border-color: #446abb;
+    border-color: $s_color;
+    color: $s_color;
   }
 
   .current {
-    background-color: #446abb;
-    border-color: #446abb;
+    background-color: $s_color;
+    border-color: $s_color;
     color: #fff;
   }
 

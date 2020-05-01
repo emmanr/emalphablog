@@ -1,7 +1,8 @@
-@import "mixins";
+@import "shared/mixins";
+@import "shared/variables";
 
 body {
-  color: #404040;
+  color: $txt_color;
 }
 
 .container {
@@ -45,8 +46,6 @@ $colors: (red: #E74C3C, blue: #0099FF, green: #2ECC71);
     background-color: $bgcolor;
     @include border-radius(3px);
     color: #fff;
-    display: inline-block;
-    line-height: 1;
     padding: 8px 10px;
     @include transition(opacity 0.3s ease);
 

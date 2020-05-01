@@ -13,8 +13,8 @@
           <li class="header-nav-item nav-item"><%= active_links("Members", users_path, "header-nav-link") %></li>
           <li class="header-nav-item nav-item"><%= link_to "Logout", logout_path, class: "header-nav-link", method: :delete %></li>
         <% else %>
-          <li class="header-nav-item nav-item"><%= link_to "Login", login_path, class: "header-nav-link" %></li>
-          <li class="header-nav-item nav-item"><%= link_to "Signup", signup_path, class: "header-nav-link" %></li>
+          <li class="header-nav-item nav-item"><%= link_to "Login", login_path, class: "header-nav-link header-nav-link-login btn-blue" %></li>
+          <li class="header-nav-item nav-item"><%= link_to "Signup", signup_path, class: "header-nav-link header-nav-link-signup btn-red" %></li>
         <% end %>
       </ul>
     </div>

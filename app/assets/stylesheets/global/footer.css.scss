@@ -1,5 +1,7 @@
+@import "shared/variables";
+
 .footer {
-  background-color: #26263e;
+  background-color: $p_color;
   color: #fff;
   font-size: 13px;
   font-weight: 300;

@@ -1,4 +1,5 @@
-@import "mixins";
+@import "shared/variables";
+@import "shared/mixins";
 
 .header {
   background-color: #f5f5f5;
@@ -9,7 +10,7 @@
   }
 
   &-navbar-brand {
-    color: #26263e;
+    color: $p_color;
     font-weight: bold;
 
     &:hover {
@@ -18,13 +19,19 @@
   }
 
   &-nav-link {
-    color: #26263e;
+    color: $p_color;
     font-size: 14px;
     font-weight: 600;
     padding: 18px 14px;
 
+    &.active,
     &:hover {
-      color: #525286;
+      color: $s_color;
+    }
+
+    &-login {
+      margin-right: 10px;
+      margin-left: 10px;
     }
   }
 }
