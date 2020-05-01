@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index]
+  before_action :require_same_user, only: [:edit, :update]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome #{@user.username}. You've registered Successfully."
+      flash[:success] = "Welcome #{@user.username}. You've registered Successfully."
       redirect_to articles_path
     else
       render 'new'
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:notice] = "Successfully updated information for user #{@user.username}."
+      flash[:success] = "Successfully updated information for user #{@user.username}."
       redirect_to @user
     else
       render 'edit'
@@ -38,7 +40,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:notice] = "Successfully removed user"
+    flash[:warning] = "Successfully removed user"
     redirect_to users_path
   end
 
@@ -50,5 +52,12 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:danger] = "You can only edit your own account"
+      redirect_to @user
+    end
   end
 end
