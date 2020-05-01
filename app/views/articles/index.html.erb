@@ -2,9 +2,11 @@
   <h1 class="main-heading">Articles listing page</h1>
 
   <div class="container">
-    <div class="articles-topmenus text-center">
-      <%= link_to "New Article", new_article_path, class: "btn btn-outline-success" %>
-    </div>
+    <% if logged_in? %>
+      <div class="articles-topmenus text-center">
+        <%= link_to "New Article", new_article_path, class: "btn btn-outline-success" %>
+      </div>
+    <% end %>
 
     <div class="mb-3">
       <%= will_paginate @articles %>
@@ -21,12 +23,14 @@
               , Updated <%= time_ago_in_words(art.updated_at) %> ago
               <% end %>
               <br>
-              Posted by: <%= link_to art.user.username, user_path(art.user) %>
+              <% if art.user %>
+                Posted by: <%= link_to art.user.username, user_path(art.user) %>
+              <% end %>
             </p>
             <p class="articles-article-desc"><%= truncate(art.description, length: 150, omission: '...') %></p>
             <p class="text-center">
               <%= link_to "Show", article_path(art), class: "btn-blue articles-table-btn" %>
-              <% if logged_in? %>
+              <% if logged_in? && current_user == art.user %>
                 <%= link_to "Edit", edit_article_path(art), class: "btn-blue articles-table-btn" %>
                 <%= link_to "Delete", article_path(art), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-red articles-table-btn" %>
               <% end %>
