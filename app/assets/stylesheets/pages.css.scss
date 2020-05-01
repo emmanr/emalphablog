@@ -1,13 +1,14 @@
 .hp-banner {
-  background: image-url("gray-laptop.jpg") no-repeat right top / 100%;
+  align-items: center;
+  background: image-url("gray-laptop.jpg") no-repeat right top / cover;
   color: #fff;
-  height: 600px;
-  line-height: 600px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 86.17vh;
 
   &-contwrap {
-    display: inline-block;
     line-height: 60px;
+    text-align: center;
   }
 
   &-heading {
