@@ -28,6 +28,12 @@
               <% end %>
             </p>
             <p class="articles-article-desc"><%= truncate(art.description, length: 150, omission: '...') %></p>
+            <p class="mt-2">
+              Categories:
+              <% if art.categories.any? %>
+                <span><%= render art.categories %></span>
+              <% end %>
+            </p>
             <p class="text-center">
               <%= link_to "Show", article_path(art), class: "btn-blue articles-table-btn" %>
               <% if logged_in? && (current_user == art.user || current_user.admin?) %>
