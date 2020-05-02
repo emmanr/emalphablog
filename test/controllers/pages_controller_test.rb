@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get pages_index_url
+    get about_path
     assert_response :success
   end
 
