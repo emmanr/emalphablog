@@ -5,7 +5,7 @@
   background: image-url("gray-laptop.jpg") no-repeat right top / cover;
   color: #fff;
   display: flex;
-  height: 93vh;
+  height: 100vh;
   justify-content: center;
   overflow: hidden;
   position: relative;
@@ -83,9 +83,8 @@ $quantity: 15;
   }
 
   &:after {
-    background: white;
+    background: rgba(255,255,255,0.6);
     opacity: 0;
-    box-shadow: 0 0 0vw 0vw yellow;
     animation: drift ease alternate infinite, flash ease infinite;
   }
 }
@@ -129,14 +128,13 @@ $quantity: 15;
 @keyframes flash {
   0%, 30%, 100% {
     opacity: 0;
-    box-shadow: 0 0 0vw 0vw yellow;
   }
   5% {
     opacity: 1;
-    box-shadow: 0 0 2vw 0.4vw yellow;
   }
 }
 
+// mouse bottom scroll animation
 .moving-mouse-holder {
   bottom: 30px;
   left: 0;
