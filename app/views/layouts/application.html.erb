@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog Exercises</title>
+    <%= display_meta_tags site: 'Emruazablog' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= "homepg" if params["controller"] == "pages" and params["action"] == "index" %>">
     <%= render 'shared/flash_messages' %>
     <%= render 'layouts/navigation' %>
     <div id="page-content" class="main-container">
